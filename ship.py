@@ -56,3 +56,13 @@ class Ship:
         plot the ship at the nomiated position by self.rect
         """
         self.screen.blit(self.image, self.rect)
+
+    def center_ship(self):
+        """
+        put the ship to the original position
+        """
+        # locate the new ship at the center of screen bottom
+        self.rect.midbottom = self.screen_rect.midbottom
+
+        # store float value
+        self.x = float(self.rect.x)

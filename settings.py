@@ -20,6 +20,7 @@ class Settings:
 
         # ship settings
         self.ship_speed = 1.2
+        self.ship_limit = 3
 
         # bullet settings
         self.bullet_speed = 1.0
@@ -30,5 +31,5 @@ class Settings:
 
         # alien settings
         self.alien_speed = 0.8
-        self.fleet_drop_speed = 5 # the speed to drop when reach the edge
+        self.fleet_drop_speed = 50 # the speed to drop when reach the edge
         self.fleet_direction = 1
