@@ -27,6 +27,7 @@ class Scoreboard:
         # preprare the game image
         self.prep_score()
         self.prep_high_score()
+        self.prep_level()
 
     def prep_score(self):
         """
@@ -48,6 +49,7 @@ class Scoreboard:
         """
         self.screen.blit(self.score_image, self.score_image_rect)
         self.screen.blit(self.high_score_image, self.high_score_image_rect)
+        self.screen.blit(self.level_image, self.level_image_rect)
 
     def prep_high_score(self):
         """
@@ -70,3 +72,16 @@ class Scoreboard:
         if self.stats.score > self.stats.high_score:
             self.stats.high_score = self.stats.score
             self.prep_high_score()
+
+    def prep_level(self):
+        """
+        Render the level as an image
+        """
+        level_str = str(self.stats.level)
+        self.level_image = self.font.render(level_str, 
+            True, self.text_color, self.settings.bg_color)
+
+        # dispaly the score in the northeast the screen
+        self.level_image_rect = self.level_image.get_rect()
+        self.level_image_rect.right = self.score_image_rect.right
+        self.level_image_rect.top = self.score_image_rect.bottom+10

@@ -17,7 +17,7 @@ class GameStats:
         self.reset_stats()
 
         self.game_active = False
-        
+
         # high score
         self.high_score = 0
 
@@ -27,3 +27,4 @@ class GameStats:
         """
         self.ships_left = self.settings.ship_limit
         self.score = 0
+        self.level = 0
