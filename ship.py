@@ -6,8 +6,8 @@
 '''
 
 import pygame
-
-class Ship:
+from pygame.sprite import Sprite
+class Ship(Sprite):
     """
     manage ships
     """
@@ -16,6 +16,7 @@ class Ship:
         """
         initilize the ship and set its initial position
         """
+        super().__init__()
 
         # track the screen
         self.screen = ai_game.screen

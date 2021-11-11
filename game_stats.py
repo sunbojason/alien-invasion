@@ -19,7 +19,9 @@ class GameStats:
         self.game_active = False
 
         # high score
-        self.high_score = 0
+        with open("high_score.txt", "r") as f:
+            str_score = f.read()
+        self.high_score = int(str_score)
 
     def reset_stats(self):
         """
